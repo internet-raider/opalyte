@@ -1,8 +1,4 @@
 {
-    "known_devices": {},
-    "passhash": "$5$rounds=535000$6dAypPwKYsmHB3GN$9oWzjz.ZyKKpA5Y9WRfy7ai.Ab.Xtg6bZ3/4d964B60",
     "theme": "bluey",
-    "syncID": "test2",
-    "syncPass": "",
-    "port": 55437
+    "browser": "chrome"
 }

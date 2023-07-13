@@ -1,11 +1,6 @@
 bottle
 eel
-json
-datetime
-os
-sys
 apscheduler
 peewee
 plyer
 jinja2
-api
