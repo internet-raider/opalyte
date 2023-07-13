@@ -22,18 +22,14 @@
         <input type="radio" id="light" name="theme">
         <label for="light">light</label>
       </div>
-        <p><small>can only be updated on restart</small></p>
+        <p><small>restart needed</small></p>
     </div>
     <div class="column sub-card">
-      <h3>sync info:</h3>
       <div class="row align">
-        <label for="syncID">username</label>
-        <input class="row" type="text" id="syncID" name="syncID" value="{{ syncID }}">
+        <label for="browserName">browser</label>
+        <input type="text" placeholder="chrome" class="row" id="browserName" name="browserName">
       </div>
-      <div class="row align">
-        <label for="syncPass">password</label>
-        <input class="row" type="text" id="syncPass" name="syncPass" placeholder="will not appear here">
-      </div>
+      <p><small>restart needed</small></p>
     </div>
     <button class="row center align" onclick="saveSettings()">save</button>
   </div>
