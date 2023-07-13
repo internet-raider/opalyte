@@ -1,0 +1,13 @@
+{% for item in items %}
+<div class="sub-card row between" id="note{{ item.id }}">
+  <h3 class="align row header-item" onclick="getNote('{{ item.id }}')">{{ item.name }}</h3>
+  <div style="min-width: max-content;">
+    <span class="secret menu" onclick="toggleDisplay('noteMenu{{ item.id }}')" id="noteMenu{{ item.id }}">
+      <button title="edit this note" class="minicon" onclick="editNote({{ item.id }})"><i class="bi bi-pencil-fill"></i></button>
+      <button title="attachments list" class="minicon" onclick="getAttachments('{{ item.id }}', 'note')"><i class="bi bi-paperclip"></i></button>
+      <button title="delete this note" class="minicon" onclick="deleteNote({{ item.id }})"><i class="bi bi-trash3-fill"></i></button>
+    </span>
+    <button class="minicon" onclick="toggleDisplay('noteMenu{{ item.id }}')" id="noteButton{{ item.id }}">⦙</button>
+  </div>
+</div>
+{% endfor %}

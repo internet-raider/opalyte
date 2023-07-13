@@ -1,0 +1,24 @@
+<aside class="column">
+  <div class="card column">
+    <div class="between">
+      <button class="minicon" id="toggleFold" onclick="toggleCookie('hideFold'); styleFolders()"><i class="align bi bi-arrows-collapse"></i></button>
+      <button class="minicon" onclick="getSettings()">⚙</button>
+      <h2 class="row center align rotating-color">Opalyte</h2>
+      <button class="minicon" onclick="sendTemplate(
+        {
+          'place': 'name',
+          'setName': 'folderName',
+          'action': 'createFolder()',
+          'button': 'new folder'
+        },
+        'smallForm', 'home', 'formHolder')"><i class="bi bi-folder-plus"></i></button>
+    </div>
+    <div id="folders" class="column center"></div>
+  </div>
+  <div id="notesSide" class="column card no-child desktop"></div>
+  <div id="formHolder" class="floating hl no-child card space"></div>
+  <div id="popHolder" class="floating hl no-child card space"></div>
+  <div id="alertHolder" class="floating hl no-child card space center"></div>
+</aside>
+<main class="column" id="main">
+</main>

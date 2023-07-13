@@ -1,0 +1,17 @@
+<div class="column card">
+  <div class="row">
+    <button class="minicon" onclick="sendTemplate({}, 'void', 'home', 'popHolder')">
+      <i class="bi bi-arrow-left-short"></i>
+    </button>
+    <h3 class="row align center">attachments</h3>
+  </div>
+  <div class="sub-card row secret" id="topPopHolder">
+    <input class="row" type="text" id="attachmentId">
+    <button class="minicon" onclick="createAttachment('{{ type }}', '{{ id }}')"><i class="bi bi-plus-square"></i></button>
+  </div>
+  {{ attachItems }}
+  <div class="row center">
+    <button onclick="toggleDisplay('topPopHolder')" class="row center"><i class="bi bi-bookmark-plus"></i><span class="desktop">new attachment</span></button>
+    <button onclick="navigator.clipboard.writeText('{{ type }}||{{ id }}'); alertUI('<h4>attachment link copied</h4>')" class="row center"><i class="bi bi-clipboard2-plus"></i><span class="desktop">copy attachment link</span></button>
+  </div>
+</div>

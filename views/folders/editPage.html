@@ -1,0 +1,38 @@
+<div class="card column">
+    <div class="row">
+        <button class="minicon" onclick="getFolders()"><i class="bi bi-arrow-left-short"></i></button>
+        <h3 class="row center">edit folder</h3>
+    </div>
+    <div class="row sub-card">
+        <label class="align">name</label>
+        <input type="text" id="folderName" value="{{ name }}" class="row">
+    </div>    
+    <div class="sub-card column">
+        <h4 class="row center">display sections</h4>
+        <div class="button row">
+            <label class="row align" for="notes-option">notes</label>
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input id="notes-option" name="notes-option" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="button row">
+            <label class="row align" for="tasks-option">tasks</label>
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input id="tasks-option" name="tasks-option" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="button row">
+            <label class="row align" for="reminders-option">reminders</label>
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input id="reminders-option" name="reminders-option" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <button class="row" onclick="saveFolder({{ id }})">save</button>
+</div>

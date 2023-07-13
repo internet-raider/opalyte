@@ -1,0 +1,10 @@
+<div class="row card between align">
+  <button class="minicon" onclick="loadFolder()"><i class="bi bi-arrow-left-short"></i></button>
+  <h3 class="header-item">{{ name }}</h3>
+  <div class="align">
+    <button class="minicon" onclick="editNote({{ id }})"><i class="bi bi-pencil-fill"></i></button>
+    <button class="minicon" onclick="getAttachments('{{ id }}', 'note')"><i class="bi bi-paperclip"></i></button>
+    <button class="minicon" onclick="deleteNote({{ id }})"><i class="bi bi-trash3-fill"></i></button>
+  </div>
+</div>
+<div class="card column textarea" max-height: 100%;">{{ content }}</div>

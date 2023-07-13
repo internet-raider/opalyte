@@ -1,0 +1,40 @@
+<div class="card column">
+  <div class="row">
+    <button class="minicon" onclick="loadFolder()"><i class="bi bi-arrow-left-short"></i></button>
+    <h3 class="align row">settings</h3>
+  </div>
+  <div class="column">
+    <div class="column sub-card">
+      <h3>theme:</h3>
+      <div class="align card left" onclick="setSetting('bluey', 'theme')">
+        <input type="radio" id="bluey" name="theme">
+        <label for="bluey">nord dark</label>
+      </div>
+      <div class="align card left" onclick="setSetting('dark', 'theme')">
+        <input type="radio" id="dark" name="theme">
+        <label for="dark">dark</label>
+      </div>
+      <div class="align card left" onclick="setSetting('duey', 'theme')">
+        <input type="radio" id="duey" name="theme">
+        <label for="duey">gruv light</label>
+      </div>
+      <div class="align card left" onclick="setSetting('light', 'theme')">
+        <input type="radio" id="light" name="theme">
+        <label for="light">light</label>
+      </div>
+        <p><small>can only be updated on restart</small></p>
+    </div>
+    <div class="column sub-card">
+      <h3>sync info:</h3>
+      <div class="row align">
+        <label for="syncID">username</label>
+        <input class="row" type="text" id="syncID" name="syncID" value="{{ syncID }}">
+      </div>
+      <div class="row align">
+        <label for="syncPass">password</label>
+        <input class="row" type="text" id="syncPass" name="syncPass" placeholder="will not appear here">
+      </div>
+    </div>
+    <button class="row center align" onclick="saveSettings()">save</button>
+  </div>
+</div>

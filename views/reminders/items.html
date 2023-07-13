@@ -1,0 +1,32 @@
+{% for item in items %}
+{% if item.deleted %}
+{% else %}
+<div class="sub-card row between align" id="reminder{{ item.id }}">
+  <h3 class="align row header-item" onclick="loadReminder({{ item.id }})">{{ item.name }}</h3>
+  <div class="align right">
+      <span id="reminderMenu{{ item.id }}" onclick="toggleDisplay('reminderMenu{{ item.id }}')" class="secret menu" style="width: max-content;">
+        <p class="button small-text" title="repeat information">
+        {% if item.frequency == 'none' %}
+          {% if item.end_datetime < item.current_time %}
+            ended
+          {% else %}
+            ends
+          {% endif %} at {{ item.end_datetime }}
+        {% elif item.frequency == 'daily' %}
+        daily at {{ item.time }}
+        {% elif item.frequency == 'weekly' %}
+        weekly on day #{{ item.week }} at {{ item.time }}
+        {% elif item.frequency == 'monthly' %}
+        monthy on day #{{ item.month }} at {{ item.time }}
+        {% elif item.frequency == 'yearly' %}
+        yearly on day #{{ item.month }} of month #{{ item.month_of_year }} at {{ item.time }}
+        {% endif %}
+        </p>
+        <button title="attachments list" class="minicon" onclick="getAttachments({{ item.id }}, 'reminder')"><i class="bi bi-paperclip"></i></button>
+        <button title="delete this reminder" class="minicon" onclick="deleteReminder({{ item.id }})"><i class="bi bi-trash3-fill"></i></button>
+      </span>
+    <button class="minicon" onclick="toggleDisplay('reminderMenu{{ item.id }}')">⦙</button>
+  </div>
+</div>
+{% endif %}
+{% endfor %}

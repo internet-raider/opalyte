@@ -1,0 +1,28 @@
+<div class="sub-card column between align" id="reminder{{ id }}">
+  <div class="row">
+    <button class="minicon" onclick="sendTemplate({}, 'void', 'home', 'popHolder')">
+      <i class="bi bi-arrow-left-short"></i>
+    </button>
+    <h3 class="align row center header-item">{{ name }}</h3>
+  </div>
+  <div class="row between">
+    <p class="button small-text">
+      {% if frequency == 'none' %}
+        {% if end_datetime < current_time %}
+          ended
+        {% else %}
+          ends
+        {% endif %} at {{ end_datetime }}
+      {% elif frequency == 'daily' %}
+        daily at {{ time }}
+      {% elif frequency == 'weekly' %}
+        weekly on day #{{ week }} at {{ time }}
+      {% elif frequency == 'monthly' %}
+        monthy on day #{{ month }} at {{ time }}
+      {% elif frequency == 'yearly' %}
+        yearly on day #{{ month }} of month #{{ month_of_year }} at {{ time }}
+      {% endif %}
+    </p>
+    <button class="minicon" onclick="deleteReminder({{ id }})"><i class="bi bi-trash3-fill"></i></button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+  {% for item in items %}
+  <div class="row sub-card">
+    <h3 class="row align" onclick="callAttachment('{{ item.to_id }}', '{{ item.to_type }}', '{{ item.from_id }}', '{{ item.from_type }}')">{{ item.to_name }}</h3>
+    <span onclick="toggleDisplay('attachmentMenu{{ item.id }}')" id="attachmentMenu{{ item.id }}" class="secret menu">
+      <button title="delete an attachment" class="minicon" onclick="deleteAttachment('{{ item.from_id }}', '{{ item.from_type }}', '{{ item.id }}')"><i class="bi bi-trash3-fill"></i></button>
+    </span>
+    <button class="minicon" onclick="toggleDisplay('attachmentMenu{{ item.id }}')">⦙</button>
+  </div>
+  {% endfor %}

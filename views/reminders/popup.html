@@ -1,0 +1,13 @@
+<div class="column">
+  <div class="row">
+    <button class="minicon" onclick="sendTemplate({}, 'void', 'home', 'popHolder')">
+      <i class="bi bi-arrow-left-short"></i>
+    </button>
+    <h3 class="row align">{{ name }}</h3>
+    <span id="popupMenu{{ id }}" class="secret">
+      <button class="minicon" onclick="deleteReminder('{{ id }}'); sendTemplate({}, 'void', 'popHolder')"><i class="bi bi-trash3-fill"></i></button>
+    </span>
+    <button class="minicon" onclick="toggleDisplay('popupMenu{{ id }}')">⦙</button>
+  </div>
+  <div class="column">{{ html }}</div>
+</div>

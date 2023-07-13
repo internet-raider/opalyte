@@ -1,0 +1,8 @@
+/* actor-regular */
+@font-face {
+	font-family: Actor;
+	font-style: normal;
+	font-weight: 400;
+	src: local("Actor Regular"), local("Actor-Regular"), url(actor-regular.woff2) format("woff2");
+}
+
