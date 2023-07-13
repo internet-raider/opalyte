@@ -11,7 +11,7 @@ initialize_db()
 initialize_scheduler()
 
 eel.init('web')
-eel.start('index.html', size=(600, 400), block=False, mode=settings['browser'])
+eel.start('index.html', size=(800, 600), block=False, mode=settings['browser'])
 
 eel.setTheme(settings['theme'])
 
