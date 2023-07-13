@@ -1,42 +1,28 @@
-# opalyte.spec
+# -*- mode: python ; coding: utf-8 -*-
 
-# Import required modules
-import sys
-from os.path import abspath, join
-from PyInstaller.utils.hooks import collect_data_files
+block_cipher = None
 
-# Set the path to the main script
-entry_point = 'main.py'
 
-# Set the base path of the project
-base_path = abspath(".")
-
-# Set additional data files or directories to be included
-extra_datas = collect_data_files('views') + collect_data_files('web')
-
-# Define the PyInstaller spec options
 a = Analysis(
-    [entry_point],
-    pathex=[base_path],
+    ['main.py'],
+    pathex=[],
     binaries=[],
-    datas=extra_datas,
-    hiddenimports=['eel', 'json', 'datetime', 'os', 'sys', 'apscheduler', 'peewee', 'plyer', 'jinja2'],
+    datas=[('/home/grayson/code/opalyte/venv/lib/python3.11/site-packages/eel/eel.js', 'eel'), ('web', 'web'), ('views', 'views'), ('api', 'api')],
+    hiddenimports=['bottle_websocket', 'json', 'datetime', 'os', 'sys', 'apscheduler', 'peewee', 'plyer', 'jinja2', 'api'],
     hookspath=[],
+    hooksconfig={},
     runtime_hooks=[],
     excludes=[],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
-    cipher=None,
+    cipher=block_cipher,
     noarchive=False,
 )
-
-# Set the spec file options
-pyz = PYZ(a.pure, a.zipped_data, cipher=None)
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
     [],
     exclude_binaries=True,
     name='opalyte',
@@ -44,12 +30,15 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=False,  # Set to False if you want a windowed application
+    console=False,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
     onefile=True,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
     icon='web/icon.ico',
 )
-
-# Collate the spec file
 coll = COLLECT(
     exe,
     a.binaries,
@@ -57,5 +46,6 @@ coll = COLLECT(
     a.datas,
     strip=False,
     upx=True,
+    upx_exclude=[],
     name='opalyte',
 )
