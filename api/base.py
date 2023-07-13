@@ -9,6 +9,7 @@ import api.tasks
 import api.attachments
 import api.notifications
 import api.settings
+from api.uploads import init_upload
 
 
 @eel.expose
@@ -34,3 +35,5 @@ def render_template_list(data, folder, file_name):
 
     rendered = template.render(items=data)
     return rendered
+
+init_upload()
