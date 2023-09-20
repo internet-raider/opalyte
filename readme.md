@@ -20,7 +20,11 @@ To run Opalyte locally, follow these instructions:
 
 2. Clone the repository to your local machine.
 
-3. Set up a virtual environment using the provided requirements file. Open a terminal and navigate to the project's root directory. Then, execute the following commands:
+   ```bash
+   git clone https://github.com/internet-raider/opalyte.git
+   ```
+
+4. Set up a virtual environment using the provided requirements file. Open a terminal and navigate to the project's root directory. Then, execute the following commands:
 
    ```bash
    python3 -m venv venv  # Create a new virtual environment
@@ -28,9 +32,9 @@ To run Opalyte locally, follow these instructions:
    pip install -r requirements.txt  # Install the required packages
    ```
 
-4. Modify the browser setting in the `settings.json` file to specify your preferred browser. By default, Opalyte uses Chrome/Chromium. You can change this setting to any other compatible browser installed on your system.
+5. Modify the browser setting in the `settings.json` file to specify your preferred browser. By default, Opalyte uses Chrome/Chromium. You can change this setting to any other compatible browser installed on your system.
 
-5. Launch Opalyte by running the main script:
+6. Launch Opalyte by running the main script:
 
    ```bash
    python main.py
